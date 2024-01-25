@@ -443,7 +443,7 @@ const options = ref([
     },
 ])
 
-const managementOfficeId = ref(null); //管理處編號
+
 const piZhenFarewell = ref('') //埤圳別
 
 const changeYear = () => {
