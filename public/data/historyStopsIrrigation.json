@@ -1,0 +1,242 @@
+[
+    {
+        "year": "99",
+        "date": "99/1/8",
+        "period": "1",
+        "department": "苗栗",
+        "area": "明德水庫",
+        "irrigationStopArea": 1175
+    },
+    {
+        "year": "99",
+        "date": "99/2/9",
+        "period": "1",
+        "department": "苗栗",
+        "area": "中港溪水系",
+        "irrigationStopArea": 2184
+    },
+    {
+        "year": "104",
+        "date": "103/12/31",
+        "period": "1",
+        "department": "苗栗",
+        "area": "明德水庫",
+        "irrigationStopArea": 1175
+    },
+    {
+        "year": "104",
+        "date": "103/12/31",
+        "period": "1",
+        "department": "台中",
+        "area": "鯉魚潭水庫",
+        "irrigationStopArea": 4490
+    },
+    {
+        "year": "104",
+        "date": "103/12/31",
+        "period": "1",
+        "department": "台中",
+        "area": "大安溪水系-鯉魚潭圳",
+        "irrigationStopArea": 135
+    },
+    {
+        "year": "104",
+        "date": "104/1/9",
+        "period": "1",
+        "department": "桃園",
+        "area": "全區",
+        "irrigationStopArea": 22672
+    },
+    {
+        "year": "104",
+        "date": "104/1/9",
+        "period": "1",
+        "department": "新竹",
+        "area": "頭前溪水系",
+        "irrigationStopArea": 4353
+    },
+    {
+        "year": "104",
+        "date": "104/1/9",
+        "period": "1",
+        "department": "新竹",
+        "area": "鳳山溪水系",
+        "irrigationStopArea": 253
+    },
+    {
+        "year": "104",
+        "date": "104/1/9",
+        "period": "1",
+        "department": "嘉南",
+        "area": "曾文-烏山頭水庫",
+        "irrigationStopArea": 7891
+    },
+    {
+        "year": "104",
+        "date": "104/1/9",
+        "period": "1",
+        "department": "嘉南",
+        "area": "白河水庫",
+        "irrigationStopArea": 602
+    },
+    {
+        "year": "104",
+        "date": "104/2/12",
+        "period": "1",
+        "department": "苗栗",
+        "area": "中港溪水系",
+        "irrigationStopArea": 2083
+    },
+    {
+        "year": "107",
+        "date": "107/2/6",
+        "period": "1",
+        "department": "苗栗",
+        "area": "明德水庫",
+        "irrigationStopArea": 1175
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "桃園",
+        "area": "石門水庫灌區",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "石門",
+        "area": "石門水庫灌區",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "新竹",
+        "area": "頭前溪水系",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "苗栗",
+        "area": "明德水庫",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "苗栗",
+        "area": "中港溪水系",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "109",
+        "date": "109/10/6",
+        "period": "2",
+        "department": "台中",
+        "area": "鯉魚潭水庫-苑裡圳",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "110",
+        "date": "11/1/6",
+        "period": "1",
+        "department": "桃園",
+        "area": "石門水庫灌區",
+        "irrigationStopArea": 15361
+    },
+    {
+        "year": "110",
+        "date": "11/1/6",
+        "period": "1",
+        "department": "石門",
+        "area": "石門水庫灌區",
+        "irrigationStopArea": 12085
+    },
+    {
+        "year": "110",
+        "date": "109/12/31",
+        "period": "1",
+        "department": "新竹",
+        "area": "頭前溪水系",
+        "irrigationStopArea": 4588
+    },
+    {
+        "year": "110",
+        "date": "109/12/31",
+        "period": "1",
+        "department": "苗栗",
+        "area": "明德水庫",
+        "irrigationStopArea": 1175
+    },
+    {
+        "year": "110",
+        "date": "109/12/31",
+        "period": "1",
+        "department": "苗栗",
+        "area": "中港溪水系",
+        "irrigationStopArea": 1719
+    },
+    {
+        "year": "110",
+        "date": "109/12/31",
+        "period": "1",
+        "department": "台中",
+        "area": "大安溪水系中、下游灌區",
+        "irrigationStopArea": 20062
+    },
+    {
+        "year": "110",
+        "date": "109/12/31",
+        "period": "1",
+        "department": "台中",
+        "area": "大甲溪水系中、下游灌區",
+        "irrigationStopArea": 20062
+    },
+    {
+        "year": "110",
+        "date": "109/12/10",
+        "period": "1",
+        "department": "嘉南",
+        "area": "曾文-烏山頭灌區",
+        "irrigationStopArea": 19385
+    },
+    {
+        "year": "110",
+        "date": "109/12/10",
+        "period": "1",
+        "department": "嘉南",
+        "area": "白河水庫",
+        "irrigationStopArea": 19385
+    },
+    {
+        "year": "112",
+        "date": "111/12/12",
+        "period": "1",
+        "department": "嘉南",
+        "area": "曾文-烏山頭灌區",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "112",
+        "date": "111/12/12",
+        "period": "1",
+        "department": "嘉南",
+        "area": "白河水庫",
+        "irrigationStopArea": 19000
+    },
+    {
+        "year": "112",
+        "date": "112/7/21",
+        "period": "2",
+        "department": "嘉南",
+        "area": "曾文-烏山頭灌區(第3-6組)",
+        "irrigationStopArea": 28350
+    }
+]
