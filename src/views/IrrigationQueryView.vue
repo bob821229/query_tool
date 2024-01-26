@@ -67,7 +67,7 @@
                 <!-- 查詢方式2 -->
 
                 <el-tab-pane label="查詢方式2" class="search_result">
-                    <el-input v-model="piZhenFarewell" placeholder="請輸入埤圳別" clearable @input="handleSearch" />
+                    <el-input v-model="searchText" placeholder="請輸入埤圳別" clearable @input="handleSearch" />
                     <div class="btn_wrap">
                         <template v-for="i in searchResult">
                             <el-button class="el_btn" @click="GetInfo(i, 2)">
@@ -122,7 +122,7 @@
                     <div class="time_line">
                         <span style="margin-right: 20px;">資料長度:</span>
                         <span v-for="t in detailedInfo.dataLength" :key="t.year" style="width: 35px;text-align: center;"
-                            :class="{ 'gray-text': t.data }">
+                            :class="{ 'nodata': t.data }">
                             <div class="box" :class="{ 'red': t.data, 'gray': t.data }"></div>{{ t.year }}
                         </span>
                     </div>
@@ -132,7 +132,7 @@
                         <el-radio-group v-model="period" class="ml-4">
                             <el-radio label='1' size="large">一期作</el-radio>
                             <el-radio label='2' size="large">二期作</el-radio>
-                            <el-radio label='3' size="large">合計</el-radio>
+                            <el-radio label='0' size="large">合計</el-radio>
                         </el-radio-group>
                     </div>
                     <div class="m-4 flex-d-c">
@@ -169,7 +169,7 @@
             </div>
         </el-main>
     </el-container>
-    <template v-if="detailedInfo">
+    <template v-if="showTable">
         <div class="table_wrap">
             <div class="left_table">
                 <template v-if="detailedInfo">
@@ -272,7 +272,7 @@ const tableData2 = ref([
 
 // 查詢方式一
 const selectedDepartment = ref('')//管理處
-const departments = ref([]);//options
+const departments = ref<any[]>([]);//options
 
 const selectedWaterSource = ref('')//水源別
 const waterSources = ref([])//options
@@ -444,7 +444,7 @@ const options = ref([
 ])
 
 
-const piZhenFarewell = ref('') //埤圳別
+const searchText = ref('') //埤圳別
 
 const changeYear = () => {
     startYear.value = year.value
@@ -452,7 +452,7 @@ const changeYear = () => {
 }
 
 
-const data = ref([]); // 使用 ref
+const data = ref<DataItem[]>([]); // 使用 ref
 const getData = async () => {
     try {
         const response = await axios.get('public/data/data.json');
@@ -470,23 +470,37 @@ onMounted(async () => {
     // selectedDepartment.value = departments.value[0]; //預設第一個
     // console.log("deps:", departments.value);
 })
-const detailedInfo = ref(null);//點擊表格後顯示詳細資訊
+const detailedInfo = ref<DataItem | null>(null);//點擊表格後顯示詳細資訊
 
-const searchResult = ref([])//顯示出符合條件的埤圳別
+const searchResult = ref<DataItem[]>([])//顯示出符合條件的埤圳別
 // 搜尋框功能
 const handleSearch = computed(() => {
-    const searchText = piZhenFarewell.value;
-    if (searchText === "") {
+
+    if (searchText.value === "") {
         searchResult.value = [];
 
     } else {
-        let result = data.value.filter(item => item.pondName.includes(searchText));
+        let result = data.value.filter(item => item.pondName.includes(searchText.value));
         searchResult.value = result;
     }
 
 })
 
-const GetInfo = (i: object, x: number) => {
+interface DataLengthItem {
+    year: string;
+    data: boolean;
+}
+interface DataItem {
+    "department": string,
+    "waterSource": string,
+    "location": string,
+    "system1": string,
+    "system2": string,
+    "workstation": string,
+    "pondName": string,
+    "dataLength": DataLengthItem[]
+}
+const GetInfo = (i: DataItem, x: number) => {
     if (x == 1) {
         let result = data.value.filter(item => item.pondName === selectedPondName.value);
         detailedInfo.value = result[0];
@@ -505,30 +519,43 @@ const annualOption = ref('singleYear')//年度選項 (預設為單一年度)
 // singleYear單一
 // rangeYear起訖
 
-const period = ref('1')//期作別(1:一期作,2:二期作,3:合計)
+const period = ref('1')//期作別(1:一期作,2:二期作,0:合計)
+const showTable = ref(false)//是否顯示表格
 const getTableData = async () => {
+    showTable.value = true
     let obj;
+    if (detailedInfo.value) {
 
-    obj = {
-        "department": detailedInfo.value.department,
-        "pondName": detailedInfo.value.pondName,
-        "period": period.value,
-        "startYear": startYear.value,
-        "endYear": endYear.value,
+        obj = {
+            "department": detailedInfo.value.department,
+            "pondName": detailedInfo.value.pondName,
+            "period": period.value,
+            "startYear": startYear.value,
+            "endYear": endYear.value,
+        }
+        console.log("obj:", obj)
+        // try {
+        //     const response = await axios.post('url', obj);
+        //     tableData2.value = response.data;
+        // } catch (error) {
+        //     console.error('請求失敗:', error);
+        // }
+    } else {
+        console.error('無法發送請求，因為 detailedInfo 為 null');
     }
-    console.log("obj:", obj)
-    // const response = axios.post('url', obj)
 
-    // tableData2.value = response.data
+
 }
 </script>
 
-<style scoped >
+<style scoped lang="scss">
 .m-4 {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
 }
 
 .flex-d-c {
@@ -538,8 +565,10 @@ const getTableData = async () => {
     justify-content: space-around;
 }
 
-.gray-text {
+.nodata {
     color: rgb(169, 168, 168);
+    // color: $primary-color;
+    // color: $red-color;
 }
 
 .g-5 {
