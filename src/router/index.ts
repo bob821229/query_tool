@@ -168,6 +168,30 @@ const router = createRouter({
       meta: {
         title: '歷史停灌資訊'
       }
+    },
+    {
+      path: '/Datatables',
+      name: 'Datatables',
+      component: () => import('../views/DatatablesView.vue'),
+      meta: {
+        title: 'Datatables'
+      }
+    },
+    {
+      path: '/Element',
+      name: 'Element',
+      component: () => import('../views/ElementTablesView.vue'),
+      meta: {
+        title: 'Element'
+      }
+    },
+    {
+      path: '/Excel',
+      name: 'Excel',
+      component: () => import('../views/ExcelElementTablesView.vue'),
+      meta: {
+        title: 'Element'
+      }
     }
   ]
 })

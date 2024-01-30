@@ -173,7 +173,7 @@
         <div class="table_wrap">
             <div class="left_table">
                 <template v-if="detailedInfo">
-                    <el-table :data="tableData2" border show-summary style="width:100% " stripe size="small">
+                    <el-table :data="tableData2" border show-summary sum-text='合計' style="width:100% " stripe size="small">
                         <el-table-column prop="label" label="名稱" />
                         <el-table-column prop="value" label="用水量" />
                     </el-table>

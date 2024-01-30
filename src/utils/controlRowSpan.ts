@@ -38,6 +38,3 @@ function ifFirstComing(previous, current) {
 //     return this.tableRowList;
 // })
 
-function ifFiestComing(previous, current) {
-
-}

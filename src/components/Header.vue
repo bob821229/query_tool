@@ -19,6 +19,9 @@
             </el-sub-menu>
         </el-sub-menu>
         <el-menu-item index="/history">歷史停灌資訊</el-menu-item>
+        <el-menu-item index="/Datatables">DataTables</el-menu-item>
+        <el-menu-item index="/Element">Element</el-menu-item>
+        <el-menu-item index="/Excel">Excel</el-menu-item>
     </el-menu>
 </template>
 
