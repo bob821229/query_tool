@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
@@ -8,5 +8,24 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  return { count, doubleCount, increment }
+  const resDataStore = reactive({
+    selectedDepartment: '',
+    selectedWaterSource: '',
+    selectedLocation: '',
+    selectedSystem1: '',
+    selectedSystem2: '',
+    selectedWorkstation: '',
+    selectedPondName: ''
+  })
+
+  const fetchDataStore = async (obj) => {
+    resDataStore.selectedDepartment = obj.selectedDepartment
+    resDataStore.selectedWaterSource = obj.selectedWaterSource
+    resDataStore.selectedLocation = obj.selectedLocation
+    resDataStore.selectedSystem1 = obj.selectedSystem1
+    resDataStore.selectedSystem2 = obj.selectedSystem2
+    resDataStore.selectedWorkstation = obj.selectedWorkstation
+    resDataStore.selectedPondName = obj.selectedPondName
+  }
+  return { count, doubleCount, increment, fetchDataStore, resDataStore }
 })

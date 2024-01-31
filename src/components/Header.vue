@@ -22,6 +22,7 @@
         <el-menu-item index="/Datatables">DataTables</el-menu-item>
         <el-menu-item index="/Element">Element</el-menu-item>
         <el-menu-item index="/Excel">Excel</el-menu-item>
+        <el-menu-item index="/Wrap">Wrap</el-menu-item>
     </el-menu>
 </template>
 

@@ -192,6 +192,14 @@ const router = createRouter({
       meta: {
         title: 'Element'
       }
+    },
+    {
+      path: '/Wrap',
+      name: 'Wrap',
+      component: () => import('../views/Wrap.vue'),
+      meta: {
+        title: 'Element'
+      }
     }
   ]
 })
